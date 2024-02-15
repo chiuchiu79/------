@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo is...</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <style>
+    :root {
+      --line-size: 4px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url(./img/bg.JPG);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+  </style>
+
+</head>
+
+<body style="overflow: hidden;">
+  <!-- 側邊導覽列 -->
+  <div class="navigation">
+    <button class="hamburger" onclick="show()">
+      <div id="bar1" class="bar"></div>
+      <div id="bar2" class="bar"></div>
+      <div id="bar3" class="bar"></div>
+    </button>
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./portfolio.html">Portfolio</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li>
+          <a href="https://www.instagram.com/chiuchiu79/?hl=zh-tw" target="_blank">
+            <img id="instaicon" src="./img/ig.png" />
+          </a>
+          <a href="https://www.facebook.com/qiu.wen.33" target="_blank">
+            <img id="fbicon" src="./img/fb.png" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- click按鈕 -->
+  <button id="indexClick">Take a photo</button>
+
+  <!-- 背景 -->
+  <div class="content">
+    <p id="photoIs">PHOTO is...</p>
+  </div>
+
+  <div class="arrow">
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <div class="content">
+    <a href="./about.html">
+      ENTER
+    </a>
+  </div>
+
+
+
+  <!-- camera shutter -->
+  <div class="shutter">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+
+  <script>
+    // 漢堡導覽列
+    function show() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.querySelector('.navigation').classList.toggle('active');
+    }
+    //camera shutter
+    let shutter = document.querySelector('.shutter'),
+      btn = document.getElementById('indexClick');
+
+    btn.onclick = function () {
+      shutter.classList.toggle("open");
+      shutter.style.zIndex = -1;
+      btn.style.zIndex = -1;
+      btn.style.display = 'none';
+
+    };
+
+  </script>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
